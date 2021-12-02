@@ -1,0 +1,17 @@
+<title>Registrar</title>
+<form #in="ngForm">
+    <label for="id">ID del Usuario:</label>
+    <input type="number" class="form-control" id="id" name="id" [(ngModel)]="user._id" required>
+    <label for="id">Nombre</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="user.Nombre" required>
+    <label for="id">Edad</label>
+    <input type="number" class="form-control" id="edad" name="edad" [(ngModel)]="user.Edad" required>
+    <label for="id">Ocupación</label>
+    <input type="text" class="form-control" id="ocupacion" name="ocupacion" [(ngModel)]="user.Ocupacion" required>
+    <label for="id">Género</label>
+    <input type="text" class="form-control" id="genero" name="genero" [(ngModel)]="user.Genero" required>
+    <label for="id">Contraseña</label>
+    <input type="text" class="form-control" id="contrasena" name="contrasena" [(ngModel)]="user.Pass" required>
+    <button class="btn btn-primary" [disabled]="!in.valid" (click)="register(user)">Registrar</button>
+    <button class="btn btn-warning" (click)="closeRegisterComponent()">Cerrar</button>
+</form>

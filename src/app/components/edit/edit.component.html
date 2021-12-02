@@ -1,0 +1,24 @@
+<form #in="ngForm">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="text" placeholder="{{this.ApiService.user.Nombre}}" class="form-control"
+            aria-describedby="emailHelp" name="nombre" [(ngModel)]="this.ApiService.user.Nombre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Edad</label>
+        <input type="text" placeholder="{{this.ApiService.user.Edad}}" class="form-control" name="edad"
+            [(ngModel)]="this.ApiService.user.Edad">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Ocupación</label>
+        <input type="text" placeholder="{{this.ApiService.user.Ocupacion}}" class="form-control"
+            aria-describedby="emailHelp" name="ocupacion" [(ngModel)]="this.ApiService.user.Ocupacion">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Género</label>
+        <input type="text" placeholder="{{this.ApiService.user.Genero}}" class="form-control"
+            aria-describedby="emailHelp" name="genero" [(ngModel)]="this.ApiService.user.Genero">
+    </div>
+    <button (click)="edit()" class="btn btn-primary">Aceptar</button>
+    <button (click)="closeEditComponent()" class="btn btn-primary">Cerrar</button>
+</form>

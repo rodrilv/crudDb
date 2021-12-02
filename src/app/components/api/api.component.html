@@ -1,0 +1,36 @@
+<title>Dashboard</title>
+<div class="row">
+  <div class="col-md-6">
+    <app-register *ngIf="this.ApiService.registerComponentActive == true"></app-register>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Ocupacion</th>
+          <th scope="col">Género</th>
+          <th scope="col">Eliminar</th>
+          <th scope="col">Editar</th>
+          <th scope="col"><button (click)="salir()" class="btn btn-danger custom-btn">Salir</button></th>
+          <th scope="col"><button (click)="register()" class="btn btn-secondary custom-btn">Registrar Usuario</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of this.ApiService.users.users">
+          <th scope="row">{{user._id}}</th>
+          <td>{{user.Nombre}}</td>
+          <td>{{user.Edad}}</td>
+          <td>{{user.Ocupacion}}</td>
+          <td>{{user.Genero}}</td>
+          <td><button (click)="del(user._id)" class="btn btn-danger">Eliminar</button></td>
+          <td><button (click)="edit(user)" class="btn btn-warning">Editar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-edit *ngIf="this.ApiService.editComponentActive == true"></app-edit>
+  </div>
+</div>
